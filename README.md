@@ -1,6 +1,6 @@
 # :sparkle: Virtual Queue
 
-A & E virtual queueing system to reduce strain on waiting rooms.
+A&E virtual queueing system to reduce strain on waiting rooms.
 
 ## :point_right: Demo
 
