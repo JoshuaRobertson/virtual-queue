@@ -101,7 +101,23 @@
 						<div class="card d-inline-block">
 							<div class="card-body">
 								<button type="button" class="js__next btn btn-light">Continue</button>
-								<button type="button" class="btn btn-light">Start a call</button>
+								<button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#call-modal">Start a call</button>
+							</div>
+						</div>
+						<div id="call-modal" class="modal fade" tabindex="-1" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h1 class="modal-title fs-5">Contact options</h1>
+										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+									</div>
+									<div class="modal-body text-center">
+										<span>Get your symptoms</span>
+										<h2 class="text-primary mb-3">111</h2>
+										<span>Holby City A&E department</span>
+										<h2 class="text-primary">01234 567 890</h2>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -134,7 +150,7 @@
 				</div>
 			</div>
 
-			<div class="js__message container  mt-4">
+			<div class="js__message container d-none mt-4">
 				<div style="filter: blur(4px);">
 					<div class="row mb-4">
 						<div class="col-lg-4">
@@ -256,11 +272,12 @@
 											</svg>									
 										</article>
 										<p>
-											You don't need to visit A&E, please attend the Minor Injury Unit:
+											You don't need to visit A&E, please attend the Minor Injury Unit at:
 										</p>
-										<div class="d-flex justify-content-center mt-3">
-											<button type="button" class="btn btn-outline-primary mt-1">Directions</button>
-										</div>
+										<h2 class="display-3 mb-3">3pm</h2>
+										<p class="card-text fst-italic">
+											Please be aware this timeslot may change, we will keep you updated via push notifications. 
+										</p>
 									</div>
 								</div>
 							</div>
@@ -288,30 +305,17 @@
 		</section>
 
 		<script>
-			// Select all the hidden elements and the buttons
-			const elements = document.querySelectorAll('.js__message');
-			const buttons = document.querySelectorAll('.js__next');
+			const elements = document.querySelectorAll('.js__message')
+			const buttons = document.querySelectorAll('.js__next')
 
-			const triggerTabList = document.querySelectorAll('#nav-tab button')
-
-			// Trigger outcome tabs
-			triggerTabList.forEach(triggerEl => {
-				const tabTrigger = new bootstrap.Tab(triggerEl)
-
-				triggerEl.addEventListener('click', event => {
-					event.preventDefault()
-					tabTrigger.show()
-				})
-			})
-
-			// Reveal the next element when a button is clicked
+			// Reveal the next element when clicked
 			buttons.forEach((button, index) => {
 				button.addEventListener('click', () => {
 					if (elements[index + 1]) {
-						elements[index + 1].classList.remove('d-none');
+						elements[index + 1].classList.remove('d-none')
 					}
-				});
-			});
+				})
+			})
 		</script>
 	</body>
 </html>	
