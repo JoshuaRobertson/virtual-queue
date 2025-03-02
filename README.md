@@ -1,4 +1,4 @@
-# :sparkle: Virtual Queue
+# :sparkle: Virtual Q
 
 A&E virtual queueing system to reduce strain on waiting rooms.
 
